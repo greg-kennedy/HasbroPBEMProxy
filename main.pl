@@ -4,10 +4,13 @@ use warnings;
 
 # global config
 use constant SERVER_PORT => 8080;
+use constant DISCORD_URL => 'https://discord.com/api/webhooks/223704706495545344/3d89bb7572e0fb30d8128367b3b1b44fecd1726de135cbe28a41f8b2f777c372ba2939e72279b94526ff5d1bd4358d65cf11';
 
 # includes
 use MIME::Base64 qw(decode_base64 encode_base64);
 use IO::Socket::INET qw(:DEFAULT :crlf);
+
+use WebService::Discord::Webhook;
 
 # helper function
 #  format a timestamp as RFC822
@@ -156,6 +159,16 @@ while (my ($client,$client_address) = $server->accept())
 
     # TODO
     #  HERE YOU SHOULD SEND $xem TO $email2 SOMEHOW
+    # This example uses a Discord webhook and notifies the two players
+    my $webhook = WebService::Discord::Webhook->new( url => DISCORD_URL, wait => 1 );
+    my %message = (
+      content => "NEW TURN FOR: $name2 <$email2>\nFrom: $name1 <$email1>",
+      file => {
+        name => "$timestamp-$name2-vs-$name1.xem",
+	data => $xem
+      }
+    );
+    $webhook->execute( %message );
   }
   print " . Closing connection.\n";
   close $client or die "close: $!";
