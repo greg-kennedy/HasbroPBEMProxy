@@ -10,7 +10,9 @@ The servers folded in 2001.  This rendered the games nearly unplayable, except f
 
 **This project is an attempt to revive the game servers to enable easier exchange of the savegames** without needing to dig around in folders anywhere.  This is done by using the "Proxy Server" settings in a game, like so:
 
-A Proxy Server is intended to act as a middleman for HTTP connections: instead of sending your requests to a remote website directly, you instead pass them to the proxy server, which forwards the request (and response) on your behalf.  This is helpful for privacy, website allow/deny listing, etc.  The Hasbro games support a proxy, but thanks to the insecurity of HTTP/1.0, it is possible to write our own bogus proxy service that captures the request and replies on its own.  By faking the response as though it is an actual Hasbro server, the proxy can capture and exchange gamestates, while the application thinks it's just gotten off the phone with Hasbro.
+![Proxy config dialog box](proxy.png)
+
+A Proxy Server is intended to act as a middleman for HTTP connections: instead of sending your requests to a remote website directly, you instead pass them to the proxy server, which forwards the request (and response) on your behalf.  This is helpful for privacy, website allow/deny listing, etc.  The Hasbro games support a proxy, but do not use HTTPS (SSL) for the connection.  It is thus very easy to write our own bogus proxy service that captures the request and instead serves its own response.  By faking the response as though it is an actual Hasbro server, the proxy can capture and exchange gamestates, while the application thinks it's just gotten off the phone with Hasbro.
 
 ## Supported Games
 So far, support is available for Email X-Com (aka EX-COM aka X-Com: First Alien Encounter).  I am interested in other games in the Em@il Games series, especially the NASCAR turn-based racing game, and may add support for those in the future.
@@ -71,3 +73,37 @@ The client parses this and looks for certain flags indicating a successful respo
 The server's task is to pass the turn snapshot (`.xem`) to the next player.  The original role of the Hasbro servers was to wrap this in an email message.  It is up to the dev to determine what to do with it in this case.  I have connected the output to a Discord webhook, which notifies the players and attaches the `.xem` for the opponent to pick up and play.
 
 For details of the binary structure itself, please see the comments in the source code.
+
+## Usage
+The handoff server is written as a single `.php` file which parses the cookie and constructs the response.  Setting this up requires a PHP-enabled web server, listening on the desired port and sending requests to the script.  Path parameters should be parsed into a single query parameter `timestamp` of form `seconds.milliseconds`.
+
+For example, this `httpd.conf` VirtualHost directive for Apache listens to incoming requests on port 8080, and forwards them to the script residing in `/usr/local/www/pbemproxy/index.php`.  Adjust especially the FilesMatch portion if you use `mod_php` instead of an FPM service, etc:
+
+```
+<VirtualHost *:8080>
+  ServerName 128.11.41.76
+  ServerAlias 128.11.41.77
+
+  DocumentRoot "/usr/local/www/pbemproxy"
+  <Directory "/usr/local/www/pbemproxy">
+    DirectoryIndex index.php
+
+    # Controls who can get stuff from this server.
+    Require all granted
+
+    # Set up the PHP handler
+    ProxyErrorOverride on
+    <FilesMatch \.php$>
+      SetHandler "proxy:unix:/tmp/php-fpm.sock|fcgi://localhost"
+    </FilesMatch>
+
+    RewriteEngine On
+    RewriteRule "^(\d+)/(\d+)\.htm$" "/index.php?timestamp=$1.$2" [L]
+
+  </Directory>
+</VirtualHost>
+```
+
+Alternately, if you just want to *play* the game without any of this, there is a Discord server available with the correct setup.
+
+Click here to join: https://discord.com/invite/xB4XsTeFta
