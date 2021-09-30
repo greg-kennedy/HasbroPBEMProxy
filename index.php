@@ -3,7 +3,6 @@
 
 // config
 $discord_url = "https://discord.com/api/webhooks/223704706495545344/3d89bb7572e0fb30d8128367b3b1b44fecd1726de135cbe28a41f8b2f777c372ba2939e72279b94526ff5d1bd4358d65cf11";
-
 if(!defined('STDERR')) define('STDERR', fopen('php://stderr', 'wb'));
 
 // PBEM response page
@@ -15,6 +14,12 @@ class CURLStringFile extends CURLFile {
         $this->mime     = $mime;
         $this->postname = $postname;
     }
+}
+
+function curl_del($url)
+{
+
+    return $result;
 }
 
 // helper parsing function
@@ -89,7 +94,7 @@ if (empty($_GET["timestamp"])) {
 
       // the next 9 U32 in the Header are various indicators and flags
       check('unknown1', 1, readU32($data, $offset));
-      $player_0_team = readU32($data, $offset);
+      $game_accepted = readU32($data, $offset);
       $turn_number = readU32($data, $offset);
       $game_start = readU32($data, $offset);
       check('coffee', 0x00EEFF0C, readU32($data, $offset));
@@ -122,7 +127,7 @@ if ($success) {
   // attempt to POST the response to Discord etc
 
   // build all CURL options
-  $opts[CURLOPT_URL] = $discord_url;
+  $opts[CURLOPT_URL] = $discord_url . '?wait=true';
   $opts[CURLOPT_FOLLOWLOCATION] = true;
   $opts[CURLOPT_FAILONERROR] = true;
   $opts[CURLOPT_RETURNTRANSFER] = true;
@@ -133,19 +138,34 @@ if ($success) {
   $player_index_0 = $turn_number % 2;
   $player_index_1 = 1 - $player_index_0;
 
+  // select the previous game from SQLITE DB
+  $db = new SQLite3('webhooks.db');
+  $db->enableExceptions(true);
+  $db->busyTimeout(10000);
+
+  $stmt = $db->prepare('SELECT webhook_id FROM game WHERE timestamp=:timestamp AND player_0=:player_0 AND player_1=:player_1');
+  $stmt->bindValue(':timestamp', $game_start);
+  $stmt->bindValue(':player_0', $player_email[$player_index_0]);
+  $stmt->bindValue(':player_1', $player_email[$player_index_1]);
+  $result = $stmt->execute();
+  $previous_webhook_ids = array();
+  while ($row = $result->fetchArray(SQLITE3_NUM)) {
+    $previous_webhook_ids[] = $row[0];
+  }
+  $result->finalize();
+
   $post_fields['content'] = sprintf(
-    "**<%s> (%s): IT'S YOUR TURN**\nGame: :%s:%s vs. :%s:%s\nTurn number: %d\n(Game start: <t:%d>)\nchecksum=%08x %08x\n",
-    $player_email[1], $player_name[1],
-    ($player_0_team ? 'alien' : 'military_helmet'), $player_name[$player_index_0], ($player_0_team ? 'military_helmet' : 'alien'), $player_name[$player_index_1],
+    "%s **<@%s>: %s**\nGame: %s vs. %s\nTurn number: %d\n(Game start: <t:%d>)",
+    ($game_accepted ? "💥" : "❓"), $player_email[1], ($game_accepted ? "IT'S YOUR TURN" : "GAME REQUESTED"),
+    $player_name[$player_index_0], $player_name[$player_index_1],
     $turn_number,
-    $game_start,
-    $checksum1, $checksum2);
+    $game_start);
 
   $filename = sprintf("%010d_t%02d_%s_vs_%s.xem",
-	  $game_start,
-	  $turn_number,
-          $player_name[$player_index_0],
-	  $player_name[$player_index_1]);
+    $game_start,
+    $turn_number,
+    $player_name[$player_index_0],
+    $player_name[$player_index_1]);
   
   $post_fields['file'] = new CURLStringFile($xem, $filename);
   $opts[CURLOPT_POSTFIELDS] = $post_fields;
@@ -153,14 +173,46 @@ if ($success) {
   // create curl resource
   $ch = curl_init();
   if (false === curl_setopt_array($ch, $opts)) {
-    fwrite(STDERR, "PBEMProxy CURL error: failed to set CURL_OPTS: " . curl_error($ch));
+    fwrite(STDERR, "PBEMProxy CURL error: failed to set CURL_OPTS: " . curl_error($ch) . "\n");
     $success = 0;
   } else {
     // $output contains the output string
     $output = curl_exec($ch);
     if (curl_errno($ch)) {
-      fwrite(STDERR, "PBEMProxy CURL error: " . curl_error($ch));
+      fwrite(STDERR, "PBEMProxy CURL error: " . curl_error($ch) . "\n");
       $success = 0;
+    } else {
+
+      // having captured a webhook_id, we now need to delete any previous ones,
+      //  then send a replace into at the db
+      $result_decoded = json_decode($output, true);
+      $current_webhook_id = $result_decoded['id'];
+
+      // use a separate curl handler to delete our previous posts
+      $ch_del = curl_init();
+      curl_setopt_array($ch_del, array(
+        "CURLOPT_CUSTOMREQUEST" => "DELETE",
+        "CURLOPT_FOLLOWLOCATION" => true,
+        "CURLOPT_FAILONERROR" => true,
+        "CURLOPT_RETURNTRANSFER" => true
+      ));
+      foreach ( $previous_webhook_ids as $prev_id ) {
+        curl_setopt($ch_del, CURLOPT_URL, $discord_url . '/messages/' . $prev_id);
+        $delete_result = curl_exec($ch_del);
+        if (curl_errno($ch_del)) {
+          fwrite(STDERR, "PBEMProxy CURL error: " . curl_error($ch_del) . " (" . $delete_result . ")\n");
+	}
+      }
+      curl_close($ch_del);
+
+      // send REPLACE query
+      $stmt = $db->prepare('REPLACE INTO game(timestamp, player_0, player_1, webhook_id) VALUES(:timestamp, :player_0, :player_1, :webhook_id)');
+      $stmt->bindValue(':timestamp', $game_start);
+      $stmt->bindValue(':player_0', $player_email[$player_index_0]);
+      $stmt->bindValue(':player_1', $player_email[$player_index_1]);
+      $stmt->bindValue(':webhook_id', $current_webhook_id);
+      $stmt->execute()->finalize();
+      $db->close();
     }
   }
 
