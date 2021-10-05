@@ -16,12 +16,6 @@ class CURLStringFile extends CURLFile {
     }
 }
 
-function curl_del($url)
-{
-
-    return $result;
-}
-
 // helper parsing function
 function check($name, $expected, $actual)
 {
@@ -188,22 +182,16 @@ if ($success) {
       $result_decoded = json_decode($output, true);
       $current_webhook_id = $result_decoded['id'];
 
-      // use a separate curl handler to delete our previous posts
-      $ch_del = curl_init();
-      curl_setopt_array($ch_del, array(
-        "CURLOPT_CUSTOMREQUEST" => "DELETE",
-        "CURLOPT_FOLLOWLOCATION" => true,
-        "CURLOPT_FAILONERROR" => true,
-        "CURLOPT_RETURNTRANSFER" => true
-      ));
       foreach ( $previous_webhook_ids as $prev_id ) {
-        curl_setopt($ch_del, CURLOPT_URL, $discord_url . '/messages/' . $prev_id);
-        $delete_result = curl_exec($ch_del);
-        if (curl_errno($ch_del)) {
-          fwrite(STDERR, "PBEMProxy CURL error: " . curl_error($ch_del) . " (" . $delete_result . ")\n");
-	}
+        curl_reset($ch);
+
+        curl_setopt($ch, CURLOPT_URL, $discord_url . '/messages/' . $prev_id);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_FAILONERROR, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
       }
-      curl_close($ch_del);
 
       // send REPLACE query
       $stmt = $db->prepare('REPLACE INTO game(timestamp, player_0, player_1, webhook_id) VALUES(:timestamp, :player_0, :player_1, :webhook_id)');
