@@ -15,7 +15,13 @@ The servers folded in 2001.  This rendered the games nearly unplayable, except f
 A Proxy Server is intended to act as a middleman for HTTP connections: instead of sending your requests to a remote website directly, you instead pass them to the proxy server, which forwards the request (and response) on your behalf.  This is helpful for privacy, website allow/deny listing, etc.  The Hasbro games support a proxy, but do not use HTTPS (SSL) for the connection.  It is thus very easy to write our own bogus proxy service that captures the request and instead serves its own response.  By faking the response as though it is an actual Hasbro server, the proxy can capture and exchange gamestates, while the application thinks it's just gotten off the phone with Hasbro.
 
 ## Supported Games
-So far, support is available for Email X-Com (aka EX-COM aka X-Com: First Alien Encounter).  I am interested in other games in the Em@il Games series, especially the NASCAR turn-based racing game, and may add support for those in the future.
+The following games are currently supported by the proxy:
+
+* Email X-Com (aka EX-COM aka X-Com: First Alien Encounter).
+* Email NASCAR
+* Email NFL Football
+
+I am interested in other games in the Em@il Games series, and may add support for those in the future.
 
 ## Details
 Submitting a turn involves sending a specially crafted HTTP request to a formatted URL at one of two hardcoded IP addresses.  For X-Com, the primary IP is `128.11.41.76`, and if any part of the request fails it makes another identical attempt at `128.11.41.77` instead.

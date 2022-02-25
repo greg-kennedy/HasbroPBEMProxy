@@ -1,248 +1,183 @@
-<HTML><TITLE>title</TITLE><BODY><PRE>
-<?php
+<HTML><TITLE>title</TITLE><BODY><?php
 
 // config
-$discord_url = "https://discord.com/api/webhooks/223704706495545344/3d89bb7572e0fb30d8128367b3b1b44fecd1726de135cbe28a41f8b2f777c372ba2939e72279b94526ff5d1bd4358d65cf11";
-if(!defined('STDERR')) define('STDERR', fopen('php://stderr', 'wb'));
+define('DEBUG', true);
 
-// PBEM response page
+//  these are the games we know about and the webhooks we can post to
+$games = array();
+require('game_xcom.php');
+require('game_nascar.php');
+require('game_nfl.php');
 
-// polyfill
-class CURLStringFile extends CURLFile {
-    public function __construct(string $data, string $postname, string $mime = "application/octet-stream") {
-        $this->name     = 'data://'. $mime .';base64,' . base64_encode($data);
-        $this->mime     = $mime;
-        $this->postname = $postname;
-    }
+// use the Discord message post
+require('message_discord.php');
+
+//////////////////////////////////////////////////////////////////////////////
+// enable a function to write to stderr if DEBUG enabled
+function _d($message) {
+  if (DEBUG) {
+    // enable stderr writing
+    if(!defined('STDERR')) define('STDERR', fopen('php://stderr', 'wb'));
+    fwrite(STDERR, $message . "\n");
+  }
 }
 
 // helper parsing function
 function check($name, $expected, $actual)
 {
   if ($expected !== $actual) {
-    //throw new Exception("Assertion failure: Value $name, expected $expected, got $actual");
-    fwrite(STDERR, "Assertion failure: Value $name, expected $expected, got $actual\n");
+    ///throw new Exception("Assertion failure: Value $name, expected $expected, got $actual");
+    _d("Assertion failure: Value $name, expected $expected, got $actual");
   }
 }
 
 // read a UINT32 (network-byte-order) from a string + position
 function readU32($stream, &$offset)
 {
-    $val = unpack("N", $stream, $offset);
-    $offset += 4;
-    return $val[1];
+  $val = unpack("N", $stream, $offset);
+  $offset += 4;
+  return $val[1];
 }
 
 // read a block: size, then raw bytes of $size
 function readSizedBlock($stream, &$offset)
 {
-    $size = readU32($stream, $offset);
+  $size = readU32($stream, $offset);
 
-    $data = substr($stream, $offset, $size);
-    check('block_size', $size, strlen($data));
-    $offset += $size;
+  _d("Reading block of size $size");
+  $data = substr($stream, $offset, $size);
+  check('block_size', $size, strlen($data));
+  $offset += $size;
 
-    return $data;
+  return $data;
 }
 
+// read a string (combination pascal length prefix and C null-terminator)
 function readCString($stream, &$offset)
 {
-    $str = readSizedBlock($stream, $offset);
-    check('c_string', "\0", substr($str, -1));
+  $str = readSizedBlock($stream, $offset);
+  check('c_string', "\0", substr($str, -1));
 
-    return substr($str, 0, -1);
+  return substr($str, 0, -1);
 }
 
-$xem = '';
+// MAIN HANDLER FOR INCOMING MESSAGES
 if (empty($_GET["timestamp"])) {
   // Require a timestamp in query params
-  fwrite(STDERR, "PBEMProxy called with no Timestamp\n");
-  $success = 0;
+  _d("NO TIMESTAMP");
+  echo "<H1>ERROR: Missing query parameter 'timestamp'</H1>";
 } else if (empty($_COOKIE['HasbroCookieVR1'])) {
   // Require a cookie
-  fwrite(STDERR, "PBEMProxy called with no HasbroCookieVR1\n");
-  $success = 0;
+  _d("NO COOKIE");
+  echo "<H1>ERROR: Missing cookie parameter 'HasbroCookieVR1'</H1>";
 } else {
   // Parse cookie into data and unpack
+  _d("Hasbro cookie was: '" . $_COOKIE['HasbroCookieVR1'] . "'");
   $data = base64_decode($_COOKIE['HasbroCookieVR1']);
-  if (! $data) {
-    fwrite(STDERR, "PBEMProxy failed to base64_decode cookie\n");
-    $success = 0;
-  } else {
-    $offset = 0;
 
+  if (! $data) {
+    _d("Base64_decode(cookie) failed.");
+    echo "<H1>ERROR: Failed to base64 decode 'HasbroCookieVR1'</H1>\n<BR>Contents of cookie:\n<BR><PRE>", $_COOKIE['HasbroCookieVR1'], "</PRE>";
+  } else {
     // pick apart the data into components
     //  first portion is a HEADER with some info about the submission
     try {
-      check('header_size', 0x70, readU32($data, $offset)); // header size
+      $offset = 0;
 
-      check('game_type', 0x00003939, readU32($data, $offset)); // game_type, or protocol version
+      $header_size = readU32($data, $offset);
+      $game_type = readU32($data, $offset);
+      $game_version = readU32($data, $offset);
+      _d("Header size: $header_size, game_type: $game_type, version: $game_version");
 
-      $padding_count = readU32($data, $offset);
-      check('padding_count', 0x10, $padding_count);
-      $padding = array();
-      for ($i = 0; $i < $padding_count; $i ++) {
-        $padding[$i] = readU32($data, $offset);
-        check('padding[' . $i . ']', 0x0, $padding[$i]);
+      if (! array_key_exists($game_type, $games)) {
+        throw new Exception("Assertion failure: Game type $game_type is not known!");
+      } else {
+        $game_handler = $games[$game_type];
+      }
+
+      // Following header-size, game-type and version, there are a series of U32
+      //  these have game-specific meaning and are used by the mailer
+      // There are always the same number (16)
+      $meta_custom = array();
+      _d("Meta custom at ($offset)");
+      for ($i = 0; $i < 16; $i ++) {
+        $meta_custom[$i] = readU32($data, $offset);
       }
 
       // the next 9 U32 in the Header are various indicators and flags
-      check('unknown1', 1, readU32($data, $offset));
-      $game_accepted = readU32($data, $offset);
-      $turn_number = readU32($data, $offset);
-      $game_start = readU32($data, $offset);
-      check('coffee', 0x00EEFF0C, readU32($data, $offset));
-      check('unknown2', 1, readU32($data, $offset));
-      check('unknown3', 0, readU32($data, $offset));
-      $checksum1 = readU32($data, $offset); // unknown, random?
-      $checksum2 = readU32($data, $offset); // unknown, random?
+      //  these are semi-standard
+      //  e.g. 0xC0FFEE00 always shows up in slot 5
+      $meta_standard = array();
+      _d("Meta standard at ($offset)");
+      for ($i = 0; $i < 9; $i ++) {
+        $meta_standard[$i] = readU32($data, $offset);
+      }
 
-      // XEM file size and content
-      $xem = readSizedBlock($data, $offset);
+      // META OVER!  Now we have the Payload.
+      //  This is a sized block that we don't really touch or parse.
+      _d("Reading payload starting at offset $offset");
+      $payload = readSizedBlock($data, $offset);
 
+      // Finally, there's info about the from- and to-address
+      //  for the email we're sending.
       $player_count = readU32($data, $offset);
       check('player_count', 2, $player_count);
-      $player_name = array();
-      $player_email = array();
+
+      $player = array();
       for ($i = 0; $i < $player_count; $i ++) {
-        $player_name[$i] = readCString($data, $offset);
-        $player_email[$i] = readCString($data, $offset);
+        $player[$i]['name'] = readCString($data, $offset);
+        $player[$i]['email'] = readCString($data, $offset);
       }
 
-      $success = 1;
+      // call the game-specific handler
+      //  this should return an ID for the game,
+      //  a message with info about the game,
+      //  and a filename to use for the attached payload
+      [ $id, $message, $filename ] = $game_handler($_GET['timestamp'], $meta_standard, $meta_custom, $payload, $player);
+
+      // attempt to POST the response to Discord etc
+      post_message($game_type, $id, $player[1]['email'], $message, $payload, $filename);
+
+      // Build the response for the client
+
+      // Construct response
+      //  Put together the response we will tell the client
+      //  1 = custom message, 0 = save game first?
+      //  1 = custom error message, 0 = no error (so far)
+      //  Unknown
+      //  then 0xC0FFEE00 to indicate "success"
+      $response = pack("N4", 0, 0, 1, 0x00EEFF0C);
+      // Unknown 0x40 bytes
+      for ($i = 0; $i < 0x40; $i ++) {
+        $response .= pack("C", 0);
+      }
+      // 4x UINT32, purpose unknown, in network-byte-order
+      for ($i = 0; $i < 4; $i ++) {
+        $response .= pack("N", 0);
+      }
+
+      // unknown UINT32
+      $response .= pack("N", 0);
+      // unknown pair of uint32s
+      //  these make the file extension for Message.???
+      //  whatever that is - maybe opponent name? idk
+      $response .= pack("Z8", "game");
+
+      # Some kind of payload data, prefixed with a byte-length
+      #  Guessing this is the game file
+      $response .= pack('N', strlen($payload)); $response .= $payload;
+
+      # Custom Message (message box) - MUST be multiple of 4 and zero-terminated
+      # ordinarily this is zero though
+      $response .= pack('N', 0);
+
+      _d("Responding with: '" . base64_encode($response) . "'");
+      echo "<PRE>\n", base64_encode($response), "\n</PRE>";
     } catch (Throwable $e) {
-      fwrite(STDERR, "PBEMProxy error: $e\n");
-      $success = 0;
+      _d("Caught exception: $e, Contents of cookie: '" . $_COOKIE['HasbroCookieVR1'] . "'");
+      echo "<H1>ERROR: Failed to handle input from client</H1>\n<BR>Error was:\n<BR><PRE>", $e, "</PRE>\n<BR>Contents of cookie:\n<BR><PRE>", $_COOKIE['HasbroCookieVR1'], "</PRE>";
     }
   }
 }
-
-if ($success) {
-  // attempt to POST the response to Discord etc
-
-  // build all CURL options
-  $opts[CURLOPT_URL] = $discord_url . '?wait=true';
-  $opts[CURLOPT_FOLLOWLOCATION] = true;
-  $opts[CURLOPT_FAILONERROR] = true;
-  $opts[CURLOPT_RETURNTRANSFER] = true;
-
-  // build the POST fields
-  $opts[CURLOPT_POST] = true;
-
-  $player_index_0 = $turn_number % 2;
-  $player_index_1 = 1 - $player_index_0;
-
-  // select the previous game from SQLITE DB
-  $db = new SQLite3('webhooks.db');
-  $db->enableExceptions(true);
-  $db->busyTimeout(10000);
-
-  $stmt = $db->prepare('SELECT webhook_id FROM game WHERE timestamp=:timestamp AND player_0=:player_0 AND player_1=:player_1');
-  $stmt->bindValue(':timestamp', $game_start);
-  $stmt->bindValue(':player_0', $player_email[$player_index_0]);
-  $stmt->bindValue(':player_1', $player_email[$player_index_1]);
-  $result = $stmt->execute();
-  $previous_webhook_ids = array();
-  while ($row = $result->fetchArray(SQLITE3_NUM)) {
-    $previous_webhook_ids[] = $row[0];
-  }
-  $result->finalize();
-
-  $post_fields['content'] = sprintf(
-    "%s **<@%s>: %s**\nGame: %s vs. %s\nTurn number: %d\n(Game start: <t:%d>)",
-    ($game_accepted ? "💥" : "❓"), $player_email[1], ($game_accepted ? "IT'S YOUR TURN" : "GAME REQUESTED"),
-    $player_name[$player_index_0], $player_name[$player_index_1],
-    $turn_number,
-    $game_start);
-
-  $filename = sprintf("%010d_t%02d_%s_vs_%s.xem",
-    $game_start,
-    $turn_number,
-    $player_name[$player_index_0],
-    $player_name[$player_index_1]);
-  
-  $post_fields['file'] = new CURLStringFile($xem, $filename);
-  $opts[CURLOPT_POSTFIELDS] = $post_fields;
-
-  // create curl resource
-  $ch = curl_init();
-  if (false === curl_setopt_array($ch, $opts)) {
-    fwrite(STDERR, "PBEMProxy CURL error: failed to set CURL_OPTS: " . curl_error($ch) . "\n");
-    $success = 0;
-  } else {
-    // $output contains the output string
-    $output = curl_exec($ch);
-    if (curl_errno($ch)) {
-      fwrite(STDERR, "PBEMProxy CURL error: " . curl_error($ch) . "\n");
-      $success = 0;
-    } else {
-
-      // having captured a webhook_id, we now need to delete any previous ones,
-      //  then send a replace into at the db
-      $result_decoded = json_decode($output, true);
-      $current_webhook_id = $result_decoded['id'];
-
-      foreach ( $previous_webhook_ids as $prev_id ) {
-        curl_reset($ch);
-
-        curl_setopt($ch, CURLOPT_URL, $discord_url . '/messages/' . $prev_id);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_FAILONERROR, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-      }
-
-      // send REPLACE query
-      $stmt = $db->prepare('REPLACE INTO game(timestamp, player_0, player_1, webhook_id) VALUES(:timestamp, :player_0, :player_1, :webhook_id)');
-      $stmt->bindValue(':timestamp', $game_start);
-      $stmt->bindValue(':player_0', $player_email[$player_index_0]);
-      $stmt->bindValue(':player_1', $player_email[$player_index_1]);
-      $stmt->bindValue(':webhook_id', $current_webhook_id);
-      $stmt->execute()->finalize();
-      $db->close();
-    }
-  }
-
-  // close curl resource to free up system resources
-  curl_close($ch);     
-
-}
-// Build the response for the client
-
-// Construct response
-//  Put together the response we will tell the client
-//  1 = custom message, 0 = save game first?
-//  1 = custom error message, 0 = no error (so far)
-//  Unknown
-//  then 0xC0FFEE00 to indicate "success"
-$response = pack("N4", 0, 1 - $success, 1, 0x00EEFF0C);
-// Unknown 0x40 bytes
-for ($i = 0; $i < 0x40; $i ++) {
-  $response .= pack("C", 0);
-}
-// 4x UINT32, purpose unknown, in network-byte-order
-for ($i = 0; $i < 4; $i ++) {
-  $response .= pack("N", 0);
-}
-
-// unknown UINT32
-$response .= pack("N", 0);
-// unknown pair of uint32s
-//  these make the file extension for Message.???
-//  whatever that is - maybe opponent name? idk
-$response .= pack("Z8", "tempxem");
-
-# Some kind of payload data, prefixed with a byte-length
-#  Guessing this is the XEM
-$response .= pack('N', strlen($xem)); $response .= $xem;
-
-# Custom Message (message box) - MUST be multiple of 4 and zero-terminated
-# ordinarily this is zero though
-$response .= pack('N', 0);
-
-echo base64_encode($response);
-
 ?>
-
-</PRE></BODY></HTML>
+</BODY></HTML>
