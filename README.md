@@ -81,7 +81,7 @@ The server's task is to pass the turn snapshot (`.xem`) to the next player.  The
 For details of the binary structure itself, please see the comments in the source code.
 
 ## Usage
-The handoff server is written as a single `.php` file which parses the cookie and constructs the response.  Setting this up requires a PHP-enabled web server, listening on the desired port and sending requests to the script.  Path parameters should be parsed into a single query parameter `timestamp` of form `seconds.milliseconds`.
+The handoff server is written as a `.php` file which parses the cookie and constructs the response.  Setting this up requires a PHP-enabled web server, listening on the desired port and sending requests to the script.  Path parameters should be parsed into a single query parameter `timestamp` of form `seconds.milliseconds`.
 
 For example, this `httpd.conf` VirtualHost directive for Apache listens to incoming requests on port 8080, and forwards them to the script residing in `/usr/local/www/pbemproxy/index.php`.  Adjust especially the FilesMatch portion if you use `mod_php` instead of an FPM service, etc:
 

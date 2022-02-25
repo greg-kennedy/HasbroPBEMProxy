@@ -1,0 +1,363 @@
+*******************************************************************
+***         Welcome to em@il-NFL Football Help          ***
+*******************************************************************
+Please read through this help box if you are having any difficulties playing the game.
+
+
+*******************************************************************
+***            em@il Games - A Brief Overview           ***
+*******************************************************************
+Hasbro Interactive em@il games are played by sending turns back and forth via email to your opponent. To view your opponent's last move, simply open the attached "TURN" file emailed to you by your opponent. This will automatically open up the proper em@il games and allow you to play the next move.
+
+It's that easy!
+
+
+*******************************************************************
+***                 How to Start a New Game              ***
+*******************************************************************
+You must have the em@il games - NFL® Football CD-ROM game disc in your CD-ROM drive to begin a new game. Great News! Your opponent does not have to have the CD-ROM game disc to be able to play. The player who starts a new game automatically becomes Player 1.
+
+
+*******************************************************************
+***       em@il - NFL® Football Rules - A Summary       ***
+*******************************************************************
+
+Object
+------
+Be the team with the most points scored after four quarters of play.
+
+The Rules in a Nutshell
+-------------------
+em@il games - NFL Football follows the rules of the National Football League.
+
+For more information on the rules of professional football, please visit:
+
+http://www.nfl.com/randf/rulesdigest.html.
+
+
+********************
+*** Main Menu ***
+********************
+From the Main Menu, left-click on one of the following buttons:
+
+Play Game - Click here to start a new game. Note: If you are Player 2, you will be shown the settings for the game. You will not, however, be able to change the game settings.
+
+Edit Team - Click here to either create a new team or edit an existing team.
+
+Edit Play Book - Click here to edit an existing team's play book or to create a new one.
+
+Exit - Click here to exit the program and return to your Windows desktop.
+
+Click Here to Buy Online - Click here to go directly to Hasbro Interactive's web site where you can purchase other great Hasbro Interactive products directly from our Online Store.
+
+Help - Click here to read the in-game help text. Pressing F1 will also bring up the in-game help text.
+
+Minimize/Maximize/Quit - Just like the mini buttons on a standard Windows screen, click on these mini buttons to minimize the game to the taskbar; maximize the game to full-screen mode; or quit the game.
+
+
+*******************
+*** Edit Team ***
+*******************
+After clicking on the Edit Team button, you must then choose between creating a NEW team or editing an EXISTING team.
+
+NEW - This selection will take you directly to the Team Profile screen.
+
+EXISTING - This selection will open the "Team Files" window. From there, click on the team you wish to edit and then click "Open." This will take you to the Team Profile screen.
+
+
+Team Name
+You can change the team's name to any name that you want. Simply click inside the text box to select it and then type the team name you want to use.
+
+City
+This is the team's home city. You can change this to any city you want. Simply click inside the text box to select it and then type the city name you want to use.
+
+Bank
+This is the balance in your team's bank account. You may spend it on team modifications.
+
+Team Roster
+This chart shows each player on the team, as well as that player's position and stats. Click on the arrow buttons to scroll through the entire list of players. Clicking on any part of the player's information will take you to the Player Editor screen. From there you can edit the attributes of that player.
+
+Save As
+Click on this "button to save the team under a different name. This will bring up the "Team Files" window. Enter the new team name in the File Name field and then click the Save button.
+
+Save
+Click on this button to save any changes that you made to the team.
+
+Cancel
+Click on this button to cancel any changes you made to the team. This will return you to the Main Menu.
+
+Lineups
+Click on this button to go to the Lineups screen.
+
+Player's Name
+This is where you can edit the name of the player. First click inside the text box directly to the right of the Player's Name box to select it. Then type the player name you want to use.
+
+Player's Position
+Click on the arrow button and select from the pull-down menu the default position you want to assign to the player.
+
+Value/Balance/Change
+Every team has a certain amount of money that they can use to improve the performance of their players. That money falls into three categories:
+Value: This is the monetary value of the player.
+Balance: This is the amount of money the team currently has available in the bank.
+Change: This is the amount of money that will be either added to or subtracted from the Balance for changes made to this player.
+
+Size
+Click on this button to change the size of the player. Size determines the range of stats available to the player. Important! You can change the size of a player without penalty.
+
+Strength
+Click on this button to change the strength of the player. Strength can be set anywhere from 0 to 8. The cost for changing to a new strength value is listed beside the strength value. If "N/A" is listed beside the value, then that strength value is not available to a player that size.
+
+Agility
+Click on this button to change the agility of the player. Agility can be set anywhere from 0 to 7. The cost for changing to a new agility value is listed beside the agility value. If "N/A" is listed beside the value, then that agility value is not available to a player that size.
+
+Speed
+Click on this button to change the speed of the player. Speed can be set anywhere from 0 to 6. The cost for changing to a new speed value is listed beside the speed value. If "N/A" is listed beside the value, then that speed value is not available to a player that size.
+
+Intelligence
+Click on this button to change the intelligence of the player. Intelligence can be set anywhere from 0 to 6. The cost for changing to a new intelligence value is listed beside the intelligence value. If "N/A" is listed beside the value, then that intelligence value is not available to a player that size.
+
+Accept
+Click on this button to save any player changes you have made.
+
+Cancel
+Click on this button to cancel any changes you have made. This will return you to the Team Profile screen.
+
+
+**************************
+*** Lineups Screen ***
+**************************
+This screen will allow you to assign players from your team to positions in each of the different play formations. Important! You don't have to change your team's lineup if you don't want to. The game will automatically assign players to positions when you create your team.
+
+Current Lineup Window
+This is a list of all the positions and players playing the positions in the selected lineup. Hold your mouse cursor over the player's name to display his stats.
+
+Click on a player position or name to select him. The player's name will become highlighted. To de-select a player, click on his name again.
+
+Team Roster Window
+This is a list of all of the players on your team, as well as an abbreviation for each player's position. Hold your mouse cursor over the player's name to display his stats.
+
+Click on a player to select him. The player's name will become highlighted. To de-select a player, click on his name again.
+
+Substitute
+In the event that a player is injured, you will need to substitute a new player for the injured player. Click on this button to assign the player currently highlighted in the Team Roster window to the currently highlighted position in the Current Lineup window.
+
+Formation
+Click on this button to select a formation from the pull-down menu.
+
+Accept
+Click on this button to save any lineup changes you have made.
+
+Cancel
+Click on this button to cancel any lineup changes you have made. This will return you to the Team Profile screen.
+
+
+*************************
+*** Edit Play Book ***
+*************************
+A play book is the list of plays available to a football team for use during a game. There are a limited number of plays available to a team, so a play book should be made wisely. Each play book has room for 60 offensive plays and 40 defensive plays.
+
+After clicking on the Edit Play Book button, you must choose between creating a NEW play book or editing an EXISTING play book.
+
+NEW - This selection will take you directly to the Team Play Book Editor screen.
+
+EXISTING - This selection will open the "Play Book Files" window. From there, click on the play book you wish to edit and then click "Open." This will take you to the Team Play Book Editor screen.
+
+
+*******************************************
+*** Team Play Book Editor Screen ***
+*******************************************
+List Of All Plays
+This is a list of all of the plays available in the game. Click on the arrow buttons to scroll through the entire list.
+
+Current Play Book
+This is the list of either offensive plays or defensive plays currently in your selected play book. (See "Offense" and "Defense" below.) Click on the arrow buttons to scroll through the entire list.
+
+Current Play Diagram
+Click on a play to display a diagram of it in this window.
+
+Add
+Click on this button to add the currently displayed play to your play book.
+
+Remove
+Click on this button to remove the currently displayed play from your play book.
+
+Offense
+Click on this button to display the complete list of offensive plays currently in your play book.
+
+Defense
+Click on this button to display the complete list of defensive plays currently in your play book.
+
+Accept
+Click on this button to save your play book. Note: If you have created a new play book, you will be prompted to name it in the "Play Book Files" window. After you have named your play book, click "Save." This will return you to the Main Menu.
+
+Cancel
+Clicking on this button will cancel any changes you have made and return you to the Main Menu.
+
+PLAY GAME
+After the player who is initiating the game (Player 1) clicks the "Play Game" button, the following will happen:
+
+Player 1 will be asked to select several game settings.
+
+Player 2 will be shown the game settings chosen by Player 1. He/she will also be asked to select his/her team.
+
+
+***************************************
+*** The Game Settings Window ***
+***************************************
+Team File Name
+All teams, including those that you have created, will be available in this pull-down menu. Click on the name of the team you wish to use.
+
+Quart. Time
+From the pull-down menu, select the length of time you want for each quarter. Click on the desired time length.
+
+1st Half
+Select whether you wish to kick or receive for the first half.
+
+Penalties
+If you would like to allow penalties in the game, select YES.  If you don't want to allow penalties in the game, select NO.
+
+Injuries
+If you would like to allow injuries to occur in the game, select YES.  If you don't want to allow injuries to occur in the game, select NO.
+
+Novice
+Select NOVICE if you would like each team's play book to contain a list of common plays, along with a description of what each play does.
+
+Advanced
+Select ADVANCED if you would like each team's play book to be just like the real thing. Note: "Advanced" play books can be edited from the Team Play Book Editor screen.
+
+Accept
+Click on this button to start the game with the settings you have selected.
+
+Cancel
+Click on this button to cancel the changes you made to the game settings. This will return you to the Main Menu.
+
+
+*********************************
+*** The Gameplay Screen ***
+*********************************
+The em@il games - NFL Football gameplay screen features different areas and several on-screen buttons. Each area/button is described in detail below:
+
+Scoreboard
+This is the current score of the game. The football icon under one team's score indicates the team currently in possession of the ball.
+
+Timer
+This display shows the current amount of time remaining in the quarter, what quarter it is, and the current position of the football.
+
+Gameplay Summary
+This display gives you a summary of the current play, including yards gained or lost, penalties, injuries, etc.
+
+Call Play
+Click on this button to call a play.
+
+Replay
+Click on this button to replay the last play shown on the screen.
+
+Write Message
+Click on this button to write a message that will be sent to the other player.
+
+View Message
+Click on this button to read a message sent by the other player.
+
+Play Turn
+Click on this button to play your turn. Important! You must call a play using the "Call Play" button before you can play your turn.
+
+Help
+Click here to read the in-game help text.
+
+Minimize/Maximize/Quit
+Just like the mini buttons on a standard Windows® screen, click on these mini buttons to minimize the game to the taskbar; maximize the game to full-screen mode; or quit the game.
+
+
+**************************
+*** Game Statistics ***
+**************************
+Pressing F5 on your keyboard will display a Game Statistics information box. This box contains vital information, such as rushing yards, passing yards, time of possession, injuries, and scoring summaries. Click OK to close the information box. Click EXPORT to create a file called GameStats.txt in the Data directory. This file will contain the information shown in the Game Statistics information box.
+
+
+**************************
+*** Options Window ***
+**************************
+Pressing F2 on your keyboard will display the Options Window. This menu will allow you to turn the sound "on" and "off," as well as allow you to substitute players and change the player lineup in the middle of the game.
+
+Sound On
+Click here to turn the game sounds on.
+
+Sound Off
+Click here to turn the game sounds off.
+
+Substitute
+Click here to go to the Substitution screen. This will allow you to substitute a new player for an injured player.
+
+Line Ups
+Click here to go to the Lineups screen. This will allow you to change the players you are using as well as their positions.
+
+Injuries
+Click here to see a list of your injured players (if any) and the remaining time they will be out of the game.
+
+Exit
+Click here to close the Options Window.
+
+
+******************
+*** Call Play ***
+******************
+Current Plays Window
+This window displays a list of all plays currently available to your team in their Current Lineup. Click on a play to select it. This will display the play in the Current Play Diagram window. Note: If your team is on offense, only offensive plays will be listed. If your team in on defense, only defensive plays will be listed.
+
+Current Play Diagram Window
+The diagram of a selected play is displayed in this window.
+
+Formation
+Click on the arrow button to select a different formation from the pull-down menu. The plays that are available to that formation will be displayed in the Current Plays Window.
+
+Accept
+Click on this button to choose the currently selected play. Your team will use this play for the current down.
+
+Cancel
+Click on this button to cancel any selections that you have made. This will return you to the playing field.
+
+
+******************
+*** Penalties ***
+******************
+Sometimes you will be informed of a penalty against your team. You will be told what the penalty is and the consequences of either accepting or declining the penalty. Click on the appropriate button to accept or decline.
+
+
+*******************************************************************
+***         Starting the Game/Sending Your Turn        ***
+*******************************************************************
+To initially start the game, and then to send subsequent gameplay turns, you will need to provide the following information:
+Your name
+Your email address
+Your opponent's email address
+A text message to send to your opponent (optional)*
+
+*Text Messages:  Hasbro Interactive does not monitor, control, endorse, or accept responsibility for the content of text messages transmitted through the use of this product. Use of the optional Text Message feature is at yourmown risk. Users are strongly encouraged not to give out personal information through text message transmissions.
+
+
+*******************************************************************
+***                    Sending Your Turn                   ***
+*******************************************************************
+Important! You must be online in order to send a turn.
+
+The first turn of the game you do not need to call a play, as it will automatically be a kickoff. After you pick your team and settings, just click the "Play Turn" button.
+
+On your turn, complete the following steps:
+1. Click the "Call Play" button.
+2. Choose a play.
+3. Click the "Play Turn" button.
+4. Enter your name and email address in the corresponding boxes. Click the "Next" button to continue.
+5. Enter your opponent's email address in the corresponding boxes. (Important! Your opponent must have a Windows 95/98-based email account.) Click the "Next" button to continue.
+6. Enter a text message (optional) and then click the "Accept" button.
+7. A message will appear stating that the email will be sent from the Game Server computer. Click "Accept" to continue. This will send the email.
+8. After you have sent your email, your turn ends.
+
+
+*******************************************************************
+***            Receiving Your Opponent's Turn            ***
+*******************************************************************
+When you receive your opponent's turn, complete the following steps:
+1. Open the incoming email message.
+2. If your email program lets you open files directly, double-click on the "TURN" file attachment to open it. If your email program does not let you open files directly, first download the file to your desktop, and then double-click on the "TURN" file to open it.
+3. Your opponent's last move will then be shown, followed by any text message that he/she may have sent. If there is a text message, click the "OK" button to continue.
+4. It is now your turn to make a play.
