@@ -20,6 +20,7 @@ The following games are currently supported by the proxy:
 * Email X-Com (aka EX-COM aka X-Com: First Alien Encounter).
 * Email NASCAR
 * Email NFL Football
+* Email Clue / Cluedo
 
 I am interested in other games in the Em@il Games series, and may add support for those in the future.
 
