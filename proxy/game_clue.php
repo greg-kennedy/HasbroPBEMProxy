@@ -67,21 +67,23 @@ function handle_clue($timestamp, $header, $custom, $payload, $players)
   }
 
   $message .= "Turn: $turn_number\n$player_count players\n";
-  #for ($i = 0; $i < $player_count; $i ++) {
-    #if ($turn_number == 0 && ($player_names[$i] === "Player " . $i+1)) {
-      #$emoji = "👻";
-    #} else {
-      #$emoji = "🕵️";
-    #}
-    #$message .= $emoji . " " . $player_names[$i] . "\n";
-  #}
+  /*
+  for ($i = 0; $i < $player_count; $i ++) {
+    if ($turn_number == 0 && ($player_names[$i] === "Player " . $i+1)) {
+      $emoji = "👻";
+    } else {
+      $emoji = "🕵️";
+    }
+    $message .= $emoji . " " . $player_names[$i] . "\n";
+  }
+  */
   $message .= sprintf("Game ID `%08X`", $id);
 
   $filename = sprintf("clue_%08X_t%02d.lem",
     $id, $turn_number);
 
   // return info about the game that we want sent in the message
-  return array( $id, $message, $filename );
+  return array( $id, $message, $filename, str_repeat(chr(0), 0x40) );
 }
 
 // register the handler in the games array

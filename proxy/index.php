@@ -118,60 +118,67 @@ if (empty($_GET["timestamp"])) {
       //  This is a sized block that we don't really touch or parse.
       _d("Reading payload starting at offset $offset");
       $payload = readSizedBlock($data, $offset);
+      _d("Payload: " . bin2hex($payload));
 
       // Finally, there's info about the from- and to-address
       //  for the email we're sending.
       $player_count = readU32($data, $offset);
-      check('player_count', 2, $player_count);
+      //check('player_count', 2, $player_count);
 
-      $player = array();
+      $players = array();
       for ($i = 0; $i < $player_count; $i ++) {
-        $player[$i]['name'] = readCString($data, $offset);
-        $player[$i]['email'] = readCString($data, $offset);
+        $players[$i]['name'] = readCString($data, $offset);
+        $players[$i]['email'] = readCString($data, $offset);
       }
 
       // call the game-specific handler
       //  this should return an ID for the game,
       //  a message with info about the game,
       //  and a filename to use for the attached payload
-      [ $id, $message, $filename ] = $game_handler($_GET['timestamp'], $meta_standard, $meta_custom, $payload, $player);
+      [ $id, $message, $filename, $server_custom_response ] = $game_handler($_GET['timestamp'], $meta_standard, $meta_custom, $payload, $players);
 
-      // attempt to POST the response to Discord etc
-      post_message($game_type, $id, $player[1]['email'], $message, $payload, $filename);
+      // attempt to POST the response to Discord etc, but ONLY if "message" and "players" are set
+      if ($id && $message && $players && $filename) {
+        post_message($game_type, $id, $players, $message, $payload, $filename);
+      }
 
       // Build the response for the client
 
       // Construct response
       //  Put together the response we will tell the client
       //  1 = custom message, 0 = save game first?
-      //  1 = custom error message, 0 = no error (so far)
+      //  1 = Fatal, non-saveable error.  Immediate bail.  "There was an error sending the email."
       //  Unknown
       //  then 0xC0FFEE00 to indicate "success"
       $response = pack("N4", 0, 0, 1, 0x00EEFF0C);
-      // Unknown 0x40 bytes
-      for ($i = 0; $i < 0x40; $i ++) {
-        $response .= pack("C", 0);
-      }
+
+      // Game-specific server response info
+      $response .= $server_custom_response;
+
       // 4x UINT32, purpose unknown, in network-byte-order
       for ($i = 0; $i < 4; $i ++) {
         $response .= pack("N", 0);
       }
 
-      // unknown UINT32
+      //
+      // unknown UINT32, network byte order
       $response .= pack("N", 0);
       // unknown pair of uint32s
       //  these make the file extension for Message.???
       //  whatever that is - maybe opponent name? idk
       $response .= pack("Z8", "game");
 
-      # Some kind of payload data, prefixed with a byte-length
-      #  Guessing this is the game file
+      // Some kind of payload data, prefixed with a byte-length
+      //  Guessing this is the game file
       $response .= pack('N', strlen($payload)); $response .= $payload;
 
-      # Custom Message (message box) - MUST be multiple of 4 and zero-terminated
-      # ordinarily this is zero though
+      // Custom Message (message box) - MUST be multiple of 4 and zero-terminated
+      // ordinarily this is zero though
       $response .= pack('N', 0);
 
+      // "Unable to receive data from Game Server." if you send first 0x60 and have C0FFEE but close after
+      // "Connection with game server was abruptly ended" if params 1, 2 and 4 all 0 (close connection)
+      // "Game server returned invalid data" all other failures
       _d("Responding with: '" . base64_encode($response) . "'");
       echo "<PRE>\n", base64_encode($response), "\n</PRE>";
     } catch (Throwable $e) {

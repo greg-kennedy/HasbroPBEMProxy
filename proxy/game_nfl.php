@@ -62,7 +62,7 @@ function handle_nfl($timestamp, $header, $custom, $payload, $players)
 
 
   // return info about the game that we want sent in the message
-  return array( $id, $message, $filename );
+  return array( $id, $message, $filename, str_repeat(chr(0), 0x40) );
 }
 
 // register the handler in the games array

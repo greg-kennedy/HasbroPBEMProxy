@@ -69,7 +69,7 @@ function handle_nascar($timestamp, $header, $custom, $payload, $players)
     $player_names[0], $turn_number, $timestamp);
 
   // return info about the game that we want sent in the message
-  return array( $id, $message, $filename );
+  return array( $id, $message, $filename, str_repeat(chr(0), 0x40) );
 }
 
 // register the handler in the games array

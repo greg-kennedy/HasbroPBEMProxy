@@ -10,7 +10,7 @@ $discord_url = array(
   0x0000321b => "https://discord.com/api/webhooks/223704706495545344/3d89bb7572e0fb30d8128367b3b1b44fecd1726de135cbe28a41f8b2f777c372ba2939e72279b94526ff5d1bd4358d65cf11",
   0x0000392a => "https://discord.com/api/webhooks/223704706495545344/3d89bb7572e0fb30d8128367b3b1b44fecd1726de135cbe28a41f8b2f777c372ba2939e72279b94526ff5d1bd4358d65cf11"
 );
-$db_filename = 'webhooks.db';
+$db_filename = '49406.db';
 
 // polyfill
 class CURLStringFile extends CURLFile {
@@ -22,18 +22,26 @@ class CURLStringFile extends CURLFile {
 }
 
 // attempt to POST the response to Discord etc
-function post_message($game_type, $id, $recipient, $message, $attachment, $filename)
+function post_message($game_type, $id, $players, $message, $attachment, $filename)
 {
   // Discord alias support
   //  Use the alias.txt file, which is a CSV of from,to aliases.
   $aliases = file('./alias.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-  $discord_tag = preg_replace('/^@+/', '', $recipient);
-  $discord_tag = preg_replace('/\.+$/', '', $discord_tag);
-  foreach($aliases as $alias) {
-    $arr = explode(',', $alias);
-    if ($arr[0] === strtolower($discord_tag)) {
-      $discord_tag = $arr[1];
+
+  // Build a recipient list.
+  //  Recipients are all entries 1 .. N from the Players array
+  //  (Sender is entry 0)
+  $discord_tag = array();
+  for ($i = 0; $i < count($players) - 1; $i ++) {
+    $discord_tag[$i] = preg_replace('/^@+/', '', $players[$i+1]['email']);
+    $discord_tag[$i] = preg_replace('/\.+$/', '', $discord_tag[$i]);
+    foreach($aliases as $alias) {
+      $arr = explode(',', $alias);
+      if ($arr[0] === strtolower($discord_tag[$i])) {
+        $discord_tag[$i] = $arr[1];
+      }
     }
+    $discord_tag[$i] = "<@" . $discord_tag[$i] . ">";
   }
 
   // setup all common CURL options
@@ -53,7 +61,7 @@ function post_message($game_type, $id, $recipient, $message, $attachment, $filen
   curl_setopt($ch, CURLOPT_URL, $url . '?wait=true');
   curl_setopt($ch, CURLOPT_POST, true);
   curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-    'content' => "<@" . $discord_tag . ">\n$message",
+    'content' => implode(", ", $discord_tag) . "\n$message",
     'file' => new CURLStringFile($attachment, $filename)
   ));
 
