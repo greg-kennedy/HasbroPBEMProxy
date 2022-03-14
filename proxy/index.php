@@ -9,6 +9,7 @@ require('game_xcom.php');
 require('game_nascar.php');
 require('game_nfl.php');
 require('game_clue.php');
+require('game_scrabble.php');
 
 // use the Discord message post
 require('message_discord.php');

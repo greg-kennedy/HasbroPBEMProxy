@@ -1,0 +1,185 @@
+******************************************************
+***     Welcome to email-Scrabble Help      ***
+******************************************************
+Please read through this help box if you are having any difficulties playing the game.
+
+
+******************************************************
+***     E-Mail Games - A Brief Overview     ***
+******************************************************
+Hasbro Interactive Email Games are played by sending turns back and forth via email to your opponent. To view your opponent's last move, simply open the attached "TURN" file emailed to you by your opponent. This will automatically open up the proper Email 
+Game and allow you to play the next move.
+
+It's that easy!
+
+
+******************************************************
+***          How to Start a New Game        ***
+******************************************************
+You must have the Email - Scrabble CD-ROM game disc in your CD-ROM drive to begin a new game. Great News! Your opponent does not have to have the CD-ROM game disc to be able to play. The player who starts a new game automatically becomes Player 1.
+
+
+
+******************************************************
+***        Scrabble Rules - A Summary       ***
+******************************************************
+
+Object
+------
+Be the player with the highest final score.
+
+
+The Basic Rules of Scrabble
+---------------------------
+Players form interlocking words, crossword fashion, on the board using letter tiles of varying values. Each player competes for high score by taking advantage of the letter values, as well as the values of the "premium" squares on the board.
+
+Player 1 always goes first.
+
+Each player starts with seven letter tiles in his or her letter rack. Player 1 combines two or more letter tiles to form a word and places it on the board to read either across or down. One of the letters must be placed on the center <star> square.
+
+On subsequent turns, each player adds one or more letters to those already played to form new words. All letters played in a turn must be placed in one row - either across or down - to form one complete word. All words must have at least two letters. If the 
+letters played touch other letters in adjacent rows, they must form complete words, crosswise fashion, with these letters. The player gets full credit for all words formed or modified on their turn.
+
+A player completes a turn by adding together the letter values of all new words formed on that turn. The player then draws as many new letter tiles as those played, thereby always keeping seven letter tiles in their letter rack.
+
+Either of the two blank tiles may be used as any letter. Once a player states which letter the blank tile represents, it remains that letter for the rest of the game.
+
+A player may use a turn to exchange some or all of the tiles in his or her tile rack, provided there are at least seven tiles left to draw. The player draws as many new letter tiles as they returned to the pool. This ends the turn.
+
+All words, including those of foreign origin, as well as obsolete, colloquial, or slang words are permitted. Words which are not permitted include those that are always capitalized, abbreviations, prefixes and suffixes used alone, and those requiring a hyphen or an apostrophe.
+
+The game ends when all letters have been drawn and one player uses his or her last letter; or when all possible plays have been made, or when each player scores zero points (by passing, exchanging, or losing challenges) on three consecutive turns.
+
+
+Scoring
+-------
+Scoring for Email - Scrabble is done automatically. Here's how scores are calculated:
+
+The score for each turn is the sum of the letter values in each word formed or modified on that turn, plus the additional points obtained from placing letters on premium squares.
+
+Premium letter squares. A light blue square doubles the score of a letter placed on it; a dark blue square triples the letter score.
+
+Premium word squares. The score for an entire word is doubled when one of its letters is placed on a pink square; it is tripled when one of its letters is placed on a red square. Premiums for double or triple letter values are included (if any) before 
+doubling or tripling the word score.
+ 
+If a word is formed that covers two premium word squares, the score is doubled and then re-doubled (four times the letter count). Note: The center <star> square is pink which always doubles the score for the first word.
+
+Letter and square premiums count only on the turn in which they are played.
+
+When a blank tile is played on a pink or red square, the value of the word is doubled or tripled, even though the blank itself has no score value.
+
+When two or more words are formed in the same play, each is scored. The common letter is counted (with full premium value, if any) for each word.
+
+Any player who plays all seven tiles on a turn scores a "Bingo" for a premium of 50 points after totaling his or her score for the turn.
+
+When the game ends, each player's score is reduced by the sum of his or her unplayed letters. If a player has used all of his or her letters, the sum of the other players' unplayed letters is added to that player's score.
+
+
+How to Win
+----------
+The player with the highest final score wins the game. In case of a tie, the player with the highest score before adding or deducting unplayed letters wins.
+
+
+Examples of Word Formation and Scoring
+--------------------------------------
+In this example, the scores are the correct scores if the R is placed on the center <star> square. In turn 1, count HORN. In turn 2, count FARM. In turn 3, count FARMS and PASTE. In turn 4, count MOB, NOT and BE.
+
+
+******************************************************
+***     The Scrabble Gameboard Screen     ***
+******************************************************
+The Scrabble gameboard screen features pop-up text boxes to help identify the on-screen buttons. Each button is described in detail below:
+
+A.  Play Turn
+Click on this button to play your turn.
+
+B.  Write Message
+Click on this button to write a message that will be sent to your opponent.
+
+C.  View Message
+Click on this button to read a message sent by your opponent.
+
+D.  Resign
+Click on this button if you wish to give up and resign the current game.
+
+E.  Click Here to Buy Online
+Click on this button to go directly to Hasbro Interactive's web site where you can purchase other great Hasbro Interactive products directly from our Online Store.
+
+F.  Help
+Click on this button to read the in-game help text, which includes the complete game rules.
+
+G.  Minimize
+Click on this button to minimize the game to the taskbar.
+
+H.  Maximize
+Click on this button to maximize the game so that it may be played in full-screen mode.
+
+I.  Quit Game
+Click on this button to quit the game.
+
+J.  Exchange Tile
+Click on this button if you would like to exchange tiles in your rack. Then click on each tile you wish to exchange. (If you change you mind, click again on the "Exchange Tile" button to cancel.) Finally, click on the "Play Turn" button to exchange 
+the selected tiles.
+
+K.  Clear
+Click on this button to remove tiles you have just placed from the board and return them to your rack.
+
+L.  Shuffle
+Click on this button to shuffle the tiles on your rack.
+
+M.  Pass Turn
+Click on this button to pass your turn to the next player without playing a word. Note: If both players pass three consecutive turns, the game is over.
+
+N.  Challenge
+Click on this button to challenge the last word that your opponent played. If that word is not a proper word, your opponent will lose that word and the points that go along with it. If your opponent's word is a proper word, you will be told so and lose your turn.
+
+O.  Tile Bag
+The number on this bag tells you how many tiles remain in the bag. These are tiles that have not yet been used by either player, and currently do not appear on either player's rack.
+
+P.  Current Score
+This window displays that player's current score.
+
+Q.  Last Played Score
+This window displays the total point value of the last word played by your opponent.
+
+R.  Current Word Score
+This window displays the total point value of the word you have just placed on the board.
+
+
+******************************************************
+***  Starting the Game/Sending Your Turn  ***
+******************************************************
+To initially start the game, and then to send subsequent gameplay turns, you will need to provide the following information:
+Your name
+Your email address
+Your opponent's email address
+A text message to send to your opponent (optional)*
+
+*Text Messages:  Hasbro Interactive does not monitor, control, endorse, or accept responsibility for the content of text messages transmitted through the use of this product. Use of the optional Text Message feature is at your own risk. Users 
+are strongly encouraged not to give out personal information through text message transmissions.
+
+
+******************************************************
+***             Sending Your Turn             ***
+******************************************************
+On your turn, complete the following steps:
+1. From the letter rack at the bottom of the screen, click on the letter you wish to place.
+2. Drag the selected letter to its correct place on the board. Click to drop the letter into position.
+3. Repeat steps 1 and 2 for each letter you wish to place.
+4. Click the "Play Turn" button.
+5. Enter your name and email address in the corresponding boxes. Click the "Next" button to continue.
+6. Enter your opponent's email address. (Important! Your opponent must have a Windows® 95/98-based email account.) Click the "Next" button to continue.
+7. Enter a text message (optional), and then click the "Send Turn" button.
+8. A message will appear stating that the email will be sent from the Game Server computer. Click "OK" to continue. This will send the email and replenish your letter rack.
+9. After you have sent your email, your turn ends.
+
+
+******************************************************
+***     Recieving Your Opponent's Turn     ***
+******************************************************
+When you receive your opponent's turn, complete the following steps:
+1. Open the incoming email message.
+2. If your email program lets you open files directly, double-click on the "TURN" file attachment to open it. If your email program does not let you open files directly, first download the file to your desktop, and then double-click on the "TURN" file to open it.
+3. You will receive a message stating "Your opponent's last move." Click the "OK" button to continue.
+4. Your opponent's last move will then be shown, followed by any text message that he/she may have sent. If there is a text message, click the "OK" button to continue.
+5. It is now your turn to place a word.
