@@ -15,6 +15,8 @@ function b_search($array, $value)
 
       $cmp = strcmp($array[$m], $value);
 
+      //_d( sprintf("Comparing '%s' to '%s'... got %d.", $value, $array[$m], $cmp) );
+
       if ($cmp < 0) {
         $l = $m + 1;
       } elseif ($cmp > 0) {
@@ -68,23 +70,29 @@ function handle_scrabble($timestamp, $header, $custom, $payload, $players)
     _d("Dictionary lookup");
     // This is a word lookup request
     //  Each of the 9 slots of the header block contain a 16-bytes string
-    $dict = file('./CSW21.txt');
-    // Check each one against the dictionary.
-    //  If any are bad, set the response flag.
     $flag = 0;
-    for ($i = 0; $i < 9; $i ++) {
-      $chunk = substr($payload, 0x10 * $i, 0x10);
-      $word = unpack("Z*", $chunk)[1];
-      _d("Word $i: '$word'");
-      if ($word && ! b_search($dict, $word)) {
-        // word not found!  set flags depending on value of $i
-        if ($i < 4) {
-          // first 4 words can be individually reported
-          $flag |= (0xFF000000 >> ($i * 2));
-        } else {
-          // any word higher than this cannot, flag everything
-          $flag = 0xFFFFFFFF;
-          break;
+    $dict = file('./CSW21.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if ($dict === false) {
+      $e = error_get_last();
+      _d( sprintf("Failed to open dictionary file: (%d) %s", $e['type'], $e['message']) );
+    } else {
+      // Check each one against the dictionary.
+      //  If any are bad, set the response flag.
+      for ($i = 0; $i < 9; $i ++) {
+        $chunk = substr($payload, 0x10 * $i, 0x10);
+        $word = unpack("Z*", $chunk)[1];
+        _d("Word $i: '$word'");
+        if ($word && ! b_search($dict, $word)) {
+          _d(" ! NOT FOUND !");
+          // word not found!  set flags depending on value of $i
+          if ($i < 4) {
+            // first 4 words can be individually reported
+            $flag |= (0xFF000000 >> ($i * 2));
+          } else {
+            // any word higher than this cannot, flag everything
+            $flag = 0xFFFFFFFF;
+            break;
+          }
         }
       }
     }

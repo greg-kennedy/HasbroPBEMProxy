@@ -3,7 +3,7 @@
 * Product Code: 0x392a (14634)
 * Version: 0x10 (16)
 
-[Read the Manual](./email-Cluedo Help.html)
+[Read the Manual](./email-Cluedo%20Help.html)
 
 Email Clue will use system-wide proxy settings taken from Registry here:
 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings`

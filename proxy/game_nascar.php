@@ -57,7 +57,7 @@ function handle_nascar($timestamp, $header, $custom, $payload, $players)
   for ($i = 0; $i < 6; $i ++) {
     if ($player_emails[$i] === "") {
       $emoji = "🤖";
-    } else if ($turn_number == 0 && ($player_names[$i] === "Player " . $i+1)) {
+    } else if ($turn_number == 0 && $player_names[$i] === sprintf("Player %d", $i+1)) {
       $emoji = "👻";
     } else {
       $emoji = "🏎️";

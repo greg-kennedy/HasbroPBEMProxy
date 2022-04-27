@@ -24,3 +24,6 @@ Steps:
 * Apply IPS patch to `email-Scrabble.exe`
 * Edit `Email Scrabble.reg` and set `ProxyServer` values to match desired proxy server
 * Apply `Email Scrabble.reg` to create override entries in Registry
+
+## Dictionary
+Email Scrabble word validity checks are **entirely server-side**: the client does not ship with a dictionary.  In order to enable dictionary lookups, a (sorted) word list file must be placed in the same path as `game_scrabble.php`.  By default the expected filename is `CSW21.txt` (Collins Scrabble Words, 2021 edition), though this can be changed by editing the source file.
