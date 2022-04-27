@@ -1,0 +1,9 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Hasbro Interactive\Email Battleship]
+"ProxyServer"="socks=example.com:12346"
+"ProxyEnable"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Hasbro Interactive\Email Battleship]
+"ProxyServer"="socks=example.com:12346"
+"ProxyEnable"=dword:00000001

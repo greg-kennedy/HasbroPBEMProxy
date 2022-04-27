@@ -1,0 +1,425 @@
+*********************************************
+***     Welcome to email-Battleship Help      ***
+*********************************************
+Please read through this help box if you are having any difficulties playing the game.
+
+
+*********************************************
+***      E-Mail Games - A Brief Overview      ***
+*********************************************
+Hasbro Interactive Email Games are played by sending turns back and forth via email to your opponent. To view your opponent's last move, simply open the attached "TURN" file emailed to you by your opponent. This will automatically 
+open up the proper Email Game and allow you to play the next move.
+
+It's that easy!
+
+
+*********************************************
+***          How to Start a New Game          ***
+*********************************************
+You must have the Email - Battleship CD-ROM game disc in your CD-ROM drive to begin a new game. Great News! Your opponent does not have to have the CD-ROM game disc to be able to play. The player who starts a new game automatically becomes Player 1.
+
+
+*********************************************
+***                  Choose a Game                  ***
+*********************************************
+Start a new game  by clicking on the type of game you wish to play:
+
+Classic Battleship OR Fleet Commander
+
+After making your selection, click "Next" to continue.
+
+
+*********************************************
+***                Classic Battleship                 ***
+*********************************************
+
+Object
+--------
+Be the first player to sink all 5 of the opposing player's ships.
+
+
+Basic Rules of the Game
+---------------------------
+Ships can only be placed horizontally or vertically on the gameboard grid, not diagonally.
+You cannot change the position of a ship once the game has begun.
+Player 1 always fires first.
+Players alternate turns, firing at each other's grids until they hit and sink each other's ships.
+
+
+Choose a Grid
+-----------------
+Classic Battleship features three different gameboard grid sizes:
+
+10 x 10
+12 x 12
+16 x 16
+
+Select the grid size on which you want to play.
+
+
+Choose Which Assault Type
+--------------------------------
+Classic Battleship features three different types of assault play:
+
+Classic - Players fire one shot per turn.
+Salvo - Players fire one shot for each remaining ship.
+Volley - Players fire five shots per turn.
+
+Select the assault type you want to use, then click on "Finish."
+
+
+Position Your Ships
+----------------------
+Position your ships by left-clicking your mouse to pick to them up, and then left-clicking your mouse again to place them back on the grid. Right-clicking your mouse while you have a ship selected will rotate that ship. Once you 
+have positioned your ships, click on the "Play Turn" button. Follow the on-screen instructions to contact your opponent and initiate the start of the game.
+
+
+Starting the Game/Sending Your Turn
+--------------------------------------------
+To initially start the game, and then to send subsequent gameplay turns, you will need to provide the following information:
+Your name
+Your email address
+Your opponent's email address
+A text message to send to your opponent (optional)*
+
+*Text Messages:  Hasbro Interactive does not monitor, control, endorse, or accept responsibility for the content of text messages transmitted through the use of this product. Use of the optional Text Message feature is at your own risk. Users are strongly encouraged not to give out personal information through text message transmissions.
+
+
+*********************************************
+*   The Classic Battleship Gameboard Screen  *
+*********************************************
+The Classic Battleship gameboard screen features pop-up text boxes to help identify the on-screen buttons. Each button is described in detail below:
+
+A.  Play Turn
+Click on this button to play your turn.
+
+B.  Write Message
+Click on this button to write a message that will be sent to your opponent.
+
+C.  View Message
+Click on this button to read a message sent by your opponent.
+
+D.  Surrender
+Click on this button if you wish to give up and surrender the current game.
+
+E.  Click Here to Buy Online
+Click on this button to go directly to Hasbro Interactive's web site where you can purchase other great Hasbro Interactive products directly from our Online Store.
+
+F.  Help
+Click on this button to read the in-game help text, which includes the complete game rules.
+
+G.  Minimize
+Click on this button to minimize the game to the taskbar.
+
+H.  Maximize
+Click on this button to maximize the game so that it can be played in full-screen mode.
+
+I.  Quit Game
+Click on this button to quit the game.
+
+J.  Ship Status
+The display below each player's name indicates the status of each player's fleet. Each ship is color coded:
+Green - This ship is undamaged.
+Orange - This ship has been damaged.
+Red - This ship has been destroyed.
+
+Note:  You will only see your opponent's ships as either green or red.
+
+
+*********************************************
+***               Sending Your Turn                ***
+*********************************************
+On your turn, complete the following steps:
+1. Pick a square on the target grid where you want to fire a torpedo and click on it. A torpedo icon will appear in that square.
+2. Click the "Play Turn" button.
+3. Enter your name and email address in the corresponding boxes. Click the "Next" button to continue.
+4. Enter your opponent's email address. (Important! Your opponent must have a Windows® 95/98-based email account.) Click the "Next" button to continue.
+5. Enter a text message (optional), and then click the "Send Turn" button.
+6. A message will appear stating that the email will be sent from the Game Server computer. Click "OK" to continue. This will send the email and fire your missile.
+7. After firing your shot, your turn ends.
+
+
+*********************************************
+***                      It's A Hit!                       ***
+*********************************************
+If your shot lands on a location occupied by one of your opponent's ships, your shot is a hit! An "explosion" will appear on-screen in that grid location for the remainder of the game to mark the shot.
+
+
+*********************************************
+***                      It's A Miss                      ***
+*********************************************
+If your shot lands on a location NOT occupied by one of your opponent's ships, your shot is a miss. A "splash" will appear on-screen in that grid location for the remainder of the game to mark the shot.
+
+
+*********************************************
+***                  Sinking A Ship                    ***
+*********************************************
+Once you hit all of the grid squares occupied by a ship, that ship is sunk. A message box will appearing telling you exactly which ship has met its demise.
+
+
+*********************************************
+***        Recieving An Opponent's Turn         ***
+*********************************************
+When you receive your opponent's turn, complete the following steps:
+
+1. Open the incoming email message.
+2. Double-click on the "TURN" file attachment to open it.
+3. You will receive a message stating "Your opponent's last move." Click the "OK" button to continue.
+4. Your opponent's last shot will then be fired, followed by any text message that he/she might have sent. Click the "OK" button to continue.
+5. It is now your turn to fire upon your opponent's fleet.
+
+
+*********************************************
+***                Winning The Game                 ***
+*********************************************
+If you are the first player to sink your opponent's entire fleet of 5 ships, you win the game!
+
+
+
+*********************************************
+***                 Fleet Commander                 ***
+*********************************************
+Object of the Game
+-----------------------
+Be the first player to sink all of the opposing player's ships.
+
+Basic Rules of the Game
+----------------------------
+Fleet Commander is an advanced variation of Classic Battleship.
+Ships can only be placed horizontally or vertically on the gameboard grid, not diagonally.
+Player 1 always moves first.
+Players alternate turns, moving each of their own ships on the grid and firing at their opponent's fleet.
+
+Choose a Grid
+-----------------
+Fleet Commander features two different gameboard grid sizes:
+
+20 x 20
+30 x 30
+
+Select the grid size on which you want to play.
+
+Create Your Own Fleet?
+---------------------------
+At the start of a Fleet Commander game, Player 1 must choose whether or not to allow each player to create their own fleet.
+
+Yes - If "Yes" is selected, both players must create their own fleet. See How to Create Your Own Fleet below.
+
+No - If "No" is selected, both players begin the game with the same number and type of ships as defined by the game's default.
+
+
+How to Create Your Own Fleet
+-------------------------------
+To create your own fleet, you must select ships from the Ship Window (the far left column) and place them in your Fleet Window (the far right column). Each ship has a point value that is deducted from the total points 
+(130) allowed for a fleet. Note: If you prefer, you can click on the "Default" button to use the game's default fleet of ships, which consists of one of each of the following ships:
+
+Ship^T0075Point Cost
+-----------------------------
+Carrier^T007535
+Battleship^T007530
+Cruiser^T007530
+Submarine^T007515
+Destroyer^T007515
+
+To select a ship, click on it. Drag the selected ship to your Fleet Window. Click again to place the ship in your Fleet Window. If you change your mind and would like to remove a ship already placed in your Fleet Window, click on the desired ship to select it, and then drag it back to its place in the Ship Window. Click again to release the ship.
+
+
+*********************************************
+***           About The Different Ships          ***
+*********************************************
+Each ship can move multiple spaces, turn, fire, and use a special action.
+
+Ship^T0075Move^T0110Shots^T0145Special Action(s)
+--------------------------------------------------
+Carrier^T00752^T01101^T0145AWAC Plane
+^T01452 Jet Fighters
+Battleship^T00752^T01103^T01455 Cruise Missiles
+Cruiser^T00753^T01102^T0145Satellite System
+Submarine^T00753^T01101^T0145Can only be seen by
+^T0145destroyers, other 
+^T0145submarines, planes
+Destroyer^T00754^T01101^T0145Can see submarines
+^T0145at 3 spaces
+
+
+*********************************************
+***                The Special Actions               ***
+*********************************************
+CARRIER
+---------
+The carrier comes with two types of special air units: the AWAC reconnaissance plane, and the jet fighter.
+
+AWAC Reconnaissance Plane - This plane autonomously flies to a point that you have selected and then flies straight back to the carrier. The AWAC has a large viewing radius, enabling you to see your opponent's ships as you fly pass them. Be careful. This plane can be shot down by any ship or plane that sees it. 
+
+Jet Fighter - You control your Jet Fighters after you launch them. These fighters carry three shots, can move up to four grid spaces, and can move diagonally. Once a plane's three shots have been used, the plane must fly back 
+to the carrier to reload. Warning! These Jet Fighters can be shot down by enemy fighters and ships. Important! You can only launch one plane per turn. 
+
+BATTLESHIP
+-------------
+The battleship carries five cruise missiles for extra firepower.
+
+Cruise Missiles - These missiles act like normal shots, but are limited in number. Once you use them, you cannot get them back. Important! You can only fire one cruise missile per turn. 
+
+CRUISER
+---------
+The cruiser has a special satellite system to help you detect the enemy.
+
+Satellite System - Launching this system allows you to see specific areas of the grid. Exception: The satellite system cannot detect submarines. Important! You can only use this ability every other turn. 
+
+SUBMARINE
+------------
+The stealthy submarine can normally only be seen by destroyers, other submarines, and planes. Other types of ships can only see the submarine if they are in a grid space adjacent to the submarine.
+
+DESTROYER
+------------
+Destroyers have the ability to see submarines from up to 3 spaces away.
+
+
+Position Your Ships
+----------------------
+Position your ships by left-clicking your mouse to pick to them up, and then left-clicking your mouse again to place them back on the grid. Right-clicking your mouse while you have a ship selected rotates that ship. Important! In Fleet Commander, you may only initially place your ships in your half of the grid. Once you have positioned your ships, click on the "Play Turn" button. Follow the on-screen instructions to contact your opponent and initiate the start of the game.
+
+
+*********************************************
+***  Starting the Game/Sending Your Turn  ***
+*********************************************
+To initially start the game, and then to send subsequent gameplay turns, you will need to provide the following information:
+Your name
+Your email address
+Your opponent's email address
+A text message to send to your opponent (optional)*
+
+*Text Messages:  Hasbro Interactive does not monitor, control, endorse, or accept responsibility for the content of text messages transmitted through the use of this product. Use of the optional Text Message feature is at your own risk. Users are 
+strongly encouraged not to give out personal information through text message transmissions.
+
+
+*********************************************
+** The Fleet Commander Gameboard Screen **
+*********************************************
+The Fleet Commander gameboard screen features pop-up text boxes to help identify the on-screen buttons. Each button is described in detail below:
+
+A.  Play Turn
+Click on this button to play your turn.
+
+B.  Write Message
+Click on this button to write a message that will be sent to your opponent.
+
+C.  View Message
+Click on this button to read a message sent by your opponent.
+
+D.  Surrender
+Click on this button if you wish to give up and surrender the current game.
+
+E.  Click Here to Buy Online
+Click on this button to go directly to Hasbro Interactive's web site where you can purchase other great Hasbro Interactive products directly from our Online Store.
+
+F.  Help
+Click on this button to read the in-game help text, which includes the complete game rules.
+
+G.  Minimize
+Click on this button to minimize the game to the taskbar.
+
+H.  Maximize
+Click on this button to maximize the game so that it can play in full-screen mode.
+
+I.  Quit Game
+Click on this button to quit the game.
+
+J.  Ship Status
+The display below each player's name indicates the status of each player's fleet. Each ship is color coded:
+· Green - This ship is undamaged.
+· Orange - This ship has been damaged.
+· Red - This ship has been destroyed.
+
+Note:  You will only see your opponent's ships as either green or red.
+
+
+*********************************************
+***               Sending Your Turn                ***
+*********************************************
+On your turn, complete the following steps for each of your ships:
+
+1. Click on a ship to select it. Note: Each ship and jet fighter can see up to two grid spaces away from itself. This is shown by a green highlight when you select the ship.
+2. The Ship Capabilities bar will then display icons representing what the selected ship can do, including special actions. See Ship Capabilities Bar below.
+3. Utilize the selected ship's capabilities by first left-clicking on the icon representing the action you want to perform. (Right-click to deselect the icon.) Then pick a square on the target grid where you want to perform 
+that action and click on it. The appropriate action symbol will appear in that square to mark the action.
+4. Click the "Play Turn" button.
+5. Enter your name and email address in the corresponding boxes. Click the "Next" button to continue.
+6. Enter your opponent's email address. (Important! Your opponent must have a Windows® 95/98-based email account.) Click the "Next" button to continue.
+7. Enter a text message (optional), and then click the "Send Turn" button.
+8. A message will appear stating that the email will be sent from the Game Server computer. Click "OK" to continue. This will send the email, fire your shots, and activate any special actions you selected to perform.
+9. Your turn ends.
+
+
+*********************************************
+***                   Grid Revealing                   ***
+*********************************************
+After a set number of turns, the positions of ships and planes will slowly begin to be revealed to both players:
+20 x 20 grid - after 10 turns
+30 x 30 grid - after 15 turns
+
+
+*********************************************
+***               Ship Capabilities Bar              ***
+*********************************************
+Each ship can do the following:
+
+Turn Left - Click here to make the selected ship pivot from the rear of the ship and turn left. Note: There must be a matching number of empty grid squares available for the ship to turn.
+
+Move - Click here if you wish to move the selected ship. A small arrow with a number will appear designating the number of spaces that ship can move. To move the ship, click the square directly in front of the ship. The ship will then move one space forward.
+
+Turn Right - Click here to make the selected ship pivot from the rear of the ship and turn right. Note: There must be a matching number of empty grid squares available for the ship to turn.
+
+Fire - Click here if you wish to fire shots from the selected ship. A small cross-hairs icon with a number will appear designating the number of shots you can fire. To place the shots, click on the square you wish to fire upon. A small 
+torpedo will appear in that square to mark the shot.
+
+Special Actions are shown as follows:
+
+Satellite System - Click here if you wish to launch a satellite system. A small satellite icon will appear in the center of a 5 x 5 shaded imaging area. Select an area on the grid and click on it to designate the area where you would like the satellite to scan. A message box will appear asking you to confirm your coordinates. Click "Yes" to launch the satellite in that location. Note: If you click "Yes, "the satellite will be invisibly placed on the grid. On the next turn, that area of the board will be revealed. Click "No" to select other coordinates.
+
+AWACS - Click here if you wish to launch an AWAC plane. A small plane icon will appear. Select a square and click on it to designate the location where you would like the plane to fly. A message box will appear asking you to confirm your coordinates. Click "Yes" to launch your plane to that location. Click "No" to select other coordinates.
+
+Fighter - Click here if you wish to launch a Jet Fighter. A small plane icon will appear on the deck of your ship. To control the plane, you must first click on it to select it. You can then fire shots from it, or move it. Select the 
+matching action icon from the bar at the top of the screen to fire or move, and then do so as previously described.
+
+Cruise Missile - Click here if you wish to launch a Cruise Missile. A small missile icon will appear. Select a square and click on it to designate the location where you would like to fire that missile. The missile icon will appear in that 
+square to mark the shot.
+
+Remaining Shots/Movement Spaces - This number shows the combined total number of spaces you have left to move, or the combined total number of shots you have left to fire.
+
+
+*********************************************
+***                      It's A Hit!                       ***
+*********************************************
+If any of your shots land on a location occupied by one of your opponent's ships or planes, that shot is a hit! An "explosion" will appear on-screen for your next turn only in that grid location to mark the hit. Note: Since 
+ships can move, the explosion marker will disappear after one turn.
+
+
+*********************************************
+***                      It's A Miss                      ***
+*********************************************
+If any of your shots land on a location NOT occupied by one of your opponent's ships or planes, your shot is a miss. A "splash" will momentarily appear on-screen in that grid location to mark the shot.
+
+
+*********************************************
+***                  Sinking A Ship                    ***
+*********************************************
+Once you hit all of the grid squares occupied by a ship or plane, that ship or plane is sunk. A message box will appearing telling you exactly which ship or plane has met its demise.
+
+
+*********************************************
+***        Recieving An Opponent's Turn         ***
+*********************************************
+When you receive your opponent's turn, complete the following steps:
+
+1. Open the incoming email message.
+2. If your email program lets you open files directly, double-click on the "TURN" file attachment to open it. If your email program does not let you open files directly, first download the file to your desktop, and then double-click on the "TURN" file to open it.
+3. You will receive a message stating "Your opponent's last move." Click the "OK" button to continue.
+4. Your opponent's last move will then appear, followed by any text message that he/she may have sent. Click the "OK" button to continue.
+5. It is now your turn to fire upon your opponent's fleet.
+
+
+*********************************************
+***                Winning The Game                 ***
+*********************************************
+If you're the first player to sink your opponent's entire fleet, you win the game!

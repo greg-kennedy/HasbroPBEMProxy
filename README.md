@@ -22,6 +22,7 @@ The following games are currently supported by the proxy:
 * Email NFL Football
 * Email Clue / Cluedo
 * Email Scrabble
+* Email Battleship
 
 I am interested in other games in the Em@il Games series, and may add support for those in the future.
 
