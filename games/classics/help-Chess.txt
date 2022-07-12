@@ -1,0 +1,185 @@
+# this is a help file
+
+you can write anything , in any format, until the following flag:
+
+START_HELP_TEXT
+*******************************************************
+***       Welcome to email-Chess Help        ***
+*******************************************************
+Please read through this help box if you are having any difficulties playing the game.
+
+
+*******************************************************
+***     E-Mail Games - A Brief Overview      ***
+*******************************************************
+Hasbro Interactive Email Games are played by sending turns back and forth via email to your opponent. To view your opponent's last move, simply open the attached "TURN" file emailed to you by your opponent. This will
+automatically open up the proper Email Game and allow you to play the next move.
+
+It's that easy!
+
+
+*******************************************************
+***         How to Start a New Game          ***
+*******************************************************
+You must have the Email - Grand Master Chess, Draughts & Backgammon CD-ROM game disc in your CD-ROM drive to begin a new game. Great News! Your opponent does not have to have the CD-ROM game disc to be able to play . The player who starts a new game automatically becomes Player 1.
+
+*******************************************************
+***     The Rules of Chess - A Summary     ***
+*******************************************************
+Object
+------
+Be the first player to capture the opponent's King.
+
+Basic Rules of the Game
+--------------------
+Player 1 always moves first.
+Pieces are captured by moving a piece into a square occupied by an opposing piece. Play continues until the opposing player's King is captured or "Checkmated."
+Each playing piece can only move in specific directions and can perform special actions.
+
+The Different Pieces
+------------------
+Though each chess piece has its own unique abilities, no chess piece can make more than one capture per move.
+
+Pawn
+-----
+- Can move in one direction only - straight ahead.
+- Can move forward either one or two squares on its first move, and only one square at a time on all following moves.
+- If blocked by an opposing piece, it cannot advance until that piece moves out of the way.
+- Can only capture opposing pieces diagonally ahead of it. (See Captured Pieces below.)
+- Can perform "En Passant" manoeuvre. (See En Passant below.)
+- Can be "promoted." (See Pawn Promotion below.)
+
+Rook
+----
+- Moves in a straight line forward, backward, left, or right any number of unobstructed spaces.
+- Can perform "Castling" manoeuvre with the King. (See Castling below.)
+
+Knight
+------
+- Is the only chess piece that can jump over other pieces.
+- Moves in an "L-shaped pattern" by jumping from one colour corner square to the opposite colour corner square of a 3 x 2 rectangle.
+
+Bishop
+------
+- Moves diagonally forward and backward any number of unobstructed spaces.
+
+Queen
+-----
+- Moves in any direction any number of unobstructed spaces.
+
+King
+----
+- Moves one space in any direction.
+- Can perform "Castling" manoeuvre with a Rook. (See Castling below.)
+- Cannot move into a space that would allow it to move into Check. (See Check below.)
+
+
+Captured Pieces
+--------------
+Captured pieces are automatically removed from the gameboard and placed in the player's Captured Pieces window. The captor moves to the square formerly held by the captured.
+
+Pawn Promotion
+--------------
+When a pawn reaches the first row of the opponent's side of the board, it can be exchanged for any kind of piece the player wishes, except for King. After the new piece has been selected, it will automatically replace the old piece on the gameboard.
+
+En Passant
+---------
+If a pawn moves two squares on its first move, it can be captured by an opposing pawn if it moves to a position adjacent to that pawn. The attacking pawn captures the defending pawn by moving diagonally behind it. Important! The attacking pawn can only make this move on the turn immediately following the defending player's opening pawn move.
+
+Castling
+-------
+This special move allows the King to be placed in a protective position. The King is moved two spaces towards the Rook and the Rook is moved to the opposite square adjacent to the King.
+
+Castling may only take place if the following conditions are met:
+- Neither the King nor the Rook has been moved since the beginning of the game.
+- There are no pieces in-between the King or the Rook.
+- The King is not in Check.
+- The King cannot move through Check.
+
+In this version of Chess, moving the King two spaces towards the Rook will automatically cause the Castling manoeuvre to take place, providing all of the above conditions are met.
+
+Check
+-----
+The King is the only piece that is not removed from the board when captured.
+Whenever a player can capture his/her opponent's King, the King is said to be "In Check." The King's owner must try to free him from Check in one of three ways:
+1. By capturing the Checking piece.
+2. By moving the King into an adjacent square, free from Check.
+3. By moving one of his/her pieces between the King and the Checking piece - thus intercepting the Check.
+
+Checkmate!
+----------
+If a player is unable to free his/her King from a Check situation, the King is Checkmated and the opponent wins the game.
+
+
+*******************************************************
+***       The Chess Gameboard Screen       ***
+*******************************************************
+The Chess gameboard screen features pop-up text boxes to help identify the on-screen buttons. Each button is described in detail below:
+
+A.  Play Turn
+Click on this button to play your turn.
+
+B.  Write Message
+Click on this button to write a message that will be sent to your opponent.
+
+C.  View Message
+Click on this button to read a message sent by your opponent.
+
+D.  Resign
+Click on this button if you wish to give up and resign the current game.
+
+E.  Moves List
+Click here to view a list of all chess piece moves for the current game. These moves are listed in algebraic notation.
+
+F.  Help
+Click on this button to read the in-game help text, which includes the complete game rules.
+
+G.  Minimise
+Click on this button to minimise the game to the taskbar.
+
+H.  Maximise
+Click on this button to maximise the game so that it can be played in full-screen mode.
+
+I.  Quit Game
+Click on this button to quit the game.
+
+
+*******************************************************
+***   Starting the Game/Sending Your Turn  ***
+*******************************************************
+To initially start the game, and then to send subsequent gameplay turns, you will need to provide the following information:
+Your name
+Your email address
+Your opponent's email address
+A text message to send to your opponent (optional)*
+
+*Text Messages:  Hasbro Interactive does not monitor, control, endorse, or accept responsibility for the content of text messages transmitted through the use of this product. Use of the optional Text Message feature is at your
+own risk. Users are strongly encouraged not to give out personal information through text message transmissions.
+
+
+*******************************************************
+***             Sending Your Turn              ***
+*******************************************************
+On your turn, complete the following steps:
+1. Left-click on the piece you wish to move. (Player 1 moves white; Player 2 moves black.)
+2. Drag the selected piece to its correct place on the gameboard. Click to drop the piece into position. (If you change your mind, right-click to return the piece to its original location.)
+3. Click the "Play Turn" button.
+4. Enter your name and email address in the corresponding boxes. Click the "Next" button to continue.
+5. Enter your opponent's email address. (Important! Your opponent must have a Windows® 95/98-based email account.) Click the "Next" button to continue.
+6. Enter a text message (optional), and then click the "Send Turn" button.
+7. A message will appear stating that the e-mail will be sent from the Game Server computer. Click "OK" to continue. This will send the e-mail and your move.
+8. After you have sent your e-mail, your turn ends.
+
+
+*******************************************************
+***      Receiving Your Opponent's Turn      ***
+*******************************************************
+When you receive your opponent's turn, complete the following steps:
+1. Open the incoming e-mail message.
+2. If your email program lets you open files directly, double-click on the "TURN" file attachment to open it. If your email program does not let you open files directly, first download the file to your desktop, and then  double-click on the "TURN" file to open it.
+3. You will receive a message stating "Your opponent's last move." Click the "OK" button to continue.
+4. Your opponent's last move will then be shown, followed by any text message that he/she may have sent. If there is a text message, click the "OK" button to continue.
+5. It is now your turn to move.
+END_HELP_TEXT
+
+this text is also ignored

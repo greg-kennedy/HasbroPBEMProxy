@@ -1,0 +1,164 @@
+# this is a help file
+
+you can write anything , in any format, until the following flag:
+
+START_HELP_TEXT
+*******************************************************
+***   Welcome to email-Backgammon Help    ***
+*******************************************************
+Please read through this help box if you are having any difficulties playing the game.
+
+
+*******************************************************
+***       E-Mail Games - A Brief Overview       ***
+*******************************************************
+Hasbro Interactive Email Games are played by sending turns back and forth via email to your opponent. To view your opponent's last move, simply open the attached "TURN" file emailed to you by your opponent. This will
+automatically open up the proper Email Game and allow you to play the next move.
+
+It's that easy!
+
+
+*******************************************************
+***            How to Start a New Game           ***
+*******************************************************
+You must have the Email - Grand Master Chess, Checkers & Backgammon CD-ROM game disc in your CD-ROM drive to begin a new game. Great News! Your opponent does not have to have the CD-ROM game disc to be able to play . The player who starts a new game automatically becomes Player 1.
+
+
+*******************************************************
+*** The Rules of Backgammon - A Summary ***
+*******************************************************
+Object
+------
+Be the first player to move your pieces from point to point around the board until you have brought all of them to your inner table and eliminated them from the game.
+
+Basic Rules of the Game
+---------------------
+Player 1 always moves first.
+Players take turns throwing both dice and moving their pieces a number of points corresponding to the numbers thrown. It is important that players consider each turn as being made up of two parts, or moves, as indicated by the throw of the dice - one part corresponding to the number of pips (spots) on one die, and the other part corresponding to the number of pips on the other die.
+Light and dark pieces move in opposite directions. Move your pieces according to the following path: from your opponent's inner table to your opponent's outer table, then to your own outer table and from there to your own inner table.
+Because of the arrangement of the pieces at the beginning of the game, not every piece will pass through all four tables. There is no limit to the number of the same player's pieces which may occupy a point at once.
+
+Dice Wasting Rules
+----------------
+At the start of a Backgammon game, Player 1 must choose whether to enforce "dice wasting rules" during bearing off. (See Bearing Off below.)
+
+Yes - If "Yes" is selected, dice wasting rules are in effect. This means that if there is not a piece on a point indicated by the dice roll, the player must make a legal move using a piece on a higher-numbered point. If there are no pieces on higher-numbered points, the player is required to remove a piece from the highest point on which one of his/her pieces resides. A player is under no obligation to bear off if he/she can make a legal move.
+
+No - If "No" is selected, dice wasting rules are not in effect.
+
+Moves
+-----
+You may move your pieces in any order you choose. When you have made your throw, you may move one piece the number of pips on one die and another piece the number of pips on the other. Or, you may play one piece for the total, but the play must be treated as two moves, for a piece must not touch down on a point blocked to him/her by his/her opponent. (See Block below.)
+
+Doubles
+-------
+When duplicate numbers are rolled, the play is doubled. Thus, if 5-5 is rolled, two pieces may be moved two moves of five points each, or the roll may be divided into four moves of five points each by one or more pieces.
+
+Blocks
+------
+A "block" is a point which contains two or more of your opponent's pieces. No piece of  yours may move to such a point. A piece may pass over, but many never touch down or land on, a blocked point. Any part 
+of the roll of the dice which cannot be played is lost, but both dice must be played if possible.
+
+Blots
+-----
+A "blot" is a point occupied by a single piece. If you move a piece to a point occupied by a single opponent, the opponent's piece is automatically removed from the point and placed on bar.
+
+Bar
+---
+The separation between the inner and outer tables is call the "bar." When you have a piece on bar, you cannot move any other pieces until you have reentered into play your piece on bar. A piece on bar (bar piece) must be
+reentered in the opponent's inner table onto a numbered point corresponding to the throw of the dice. The number shown on either die may be used for reentering, and the number on the other die may be used to move another piece or the reentered piece. The pips on each die must be counted separately; they may not be combined to reenter a bar piece. If your dice roll does not allow you to reenter a bar piece, your turn ends.
+
+Bearing Off
+----------
+To "bear off" your pieces is to eliminate them from the game according to the throws of the dice. The pips on each die must be counted separately; they may not be combined in bearing off.
+
+When you have moved all of your pieces onto your own inner table, proceed to bear them off. If you are playing with Dice Wasting Rules in effect, and there are no pieces on a point corresponding to or higher than the number
+thrown, a piece on the inner table farthest from the ace point may then be borne off.
+
+Should one of your pieces be taken up and placed on bar after you have started bearing off, you must reenter the bar piece on the opponent's inner table and move around the board to your own inner table before you may again
+proceed to bear off your pieces.
+
+In bearing off, as in regular play, the play is doubled when doubles are thrown.
+
+How to Win
+----------
+The player who first bears off all of his/her pieces wins the game.
+
+
+*******************************************************
+***   The Backgammon Gameboard Screen   ***
+*******************************************************
+The Backgammon gameboard screen features pop-up text boxes to help identify
+the on-screen buttons. Each button is described in detail below:
+
+A.  Play Turn
+Click on this button to play your turn.
+
+B.  Write Message
+Click on this button to write a message that will be sent to your opponent.
+
+C.  View Message
+Click on this button to read a message sent by your opponent.
+
+D.  Resign
+Click on this button if you wish to give up and resign the current game.
+
+E.  Roll Dice
+Click on this button to roll the dice.
+
+F.  Help
+Click on this button to read the in-game help text, which includes the complete game rules.
+
+G.  Minimise
+Click on this button to minimise the game to the taskbar.
+
+H.  Maximise
+Click on this button to maximise the game so that it can be played in 
+full-screen mode.
+
+I.  Quit Game
+Click on this button to quit the game.
+
+
+*******************************************************
+***   Starting the Game/Sending Your Turn  ***
+*******************************************************
+To initially start the game, and then to send subsequent gameplay turns, you will need to provide the following information:
+Your name
+Your email address
+Your opponent's email address
+A text message to send to your opponent (optional)*
+
+*Text Messages:  Hasbro Interactive does not monitor, control, endorse, or accept responsibility for the content of text messages transmitted through the use of this product. Use of the optional Text Message feature is at your
+own risk. Users are strongly encouraged not to give out personal information through text message transmissions.
+
+
+*******************************************************
+***                 Sending Your Turn                 ***
+*******************************************************
+On your turn, complete the following steps:
+1. Click on the Roll Dice button.
+2. Left-click on the piece you wish to move. (Player 1 moves white; Player 2 moves black.)
+3. Drag the selected piece to its correct place on the gameboard. Click to drop the piece into position. (If you change your mind, right-click to return the piece to its original location.)
+4. Click the "Play Turn" button.
+5. Enter your name and email address in the corresponding boxes. Click the "Next" button to continue.
+6. Enter your opponent's email address. (Important! Your opponent must have a Windows® 95/98-based email account.) Click the "Next" button to continue.
+7. Enter a text message (optional), and then click the "Send Turn" button.
+8. A message will appear stating that the e-mail will be sent from the Game Server computer. Click "OK" to continue. This will send the e-mail and your move.
+9. After you have sent your e-mail, your turn ends.
+
+
+*******************************************************
+***        Receiving Your Opponent's Turn       ***
+*******************************************************
+When you receive your opponent's turn, complete the following steps:
+1. Open the incoming e-mail message.
+2. If your email program lets you open files directly, double-click on the "TURN" file attachment to open it. If your email program does not let you open files directly, first download the file to your desktop, and then
+double-click on the "TURN" file to open it.
+3. You will receive a message stating "Your opponent's last move." Click the "OK" button to continue.
+4. Your opponent's last move will then be shown, followed by any text message that he/she may have sent. If there is a text message, click the "OK" button to continue.
+5. It is now your turn to move.
+
+END_HELP_TEXT
+
+this text is also ignored

@@ -1,0 +1,9 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Hasbro Interactive\Email Backgammon]
+"ProxyServer"="example.com:12345"
+"ProxyEnable"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Hasbro Interactive\Email Backgammon]
+"ProxyServer"="example.com:12345"
+"ProxyEnable"=dword:00000001
