@@ -75,8 +75,20 @@ if (empty($_GET["timestamp"])) {
   echo "<H1>ERROR: Missing cookie parameter 'HasbroCookieVR1'</H1>";
 } else {
   // Parse cookie into data and unpack
-  _d("Hasbro cookie was: '" . $_COOKIE['HasbroCookieVR1'] . "'");
-  $data = base64_decode($_COOKIE['HasbroCookieVR1']);
+  // Sometimes the cookie comes in multiple parts so begin by printing everything
+  foreach (array_keys($_COOKIE) as $key) {
+    _d("Available cookies: '$key'");
+  }
+
+  //_d("Hasbro cookie was: '" . $_COOKIE['HasbroCookieVR1'] . "'");
+  $cookie = $_COOKIE['HasbroCookieVR1'];
+
+  for ($c = 'A'; $c < 'Z'; $c ++) {
+    if (isset($_COOKIE['HV' . $c])) {
+      $cookie .= $_COOKIE['HV' . $c];
+    } else break;
+  }
+  $data = base64_decode($cookie);
 
   if (! $data) {
     _d("Base64_decode(cookie) failed.");
@@ -84,6 +96,7 @@ if (empty($_GET["timestamp"])) {
   } else {
     // pick apart the data into components
     //  first portion is a HEADER with some info about the submission
+    //  cookie hex
     try {
       $offset = 0;
 
